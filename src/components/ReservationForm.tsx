@@ -69,84 +69,82 @@ export default function ReservationForm({
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <form onSubmit={handleSubmit} className="space-y-4 pb-4">
       <div className="rounded-xl bg-orange-50 p-4">
-        <h3 className="text-base font-bold text-gray-800 sm:text-lg">
-          {car.name}
-        </h3>
+        <h3 className="text-lg font-bold text-gray-800">{car.name}</h3>
         <p className="text-sm text-gray-600">
           Prix : {pricePerDay.toLocaleString()} FCFA / jour
         </p>
       </div>
 
       {error && (
-        <div className="rounded-lg bg-red-100 px-4 py-3 text-sm text-red-700 sm:text-base">
+        <div className="rounded-lg bg-red-100 px-4 py-3 text-sm text-red-700">
           {error}
         </div>
       )}
 
       <div>
-        <label className="mb-1 block font-medium text-gray-700">
+        <label className="mb-2 block text-sm font-medium text-gray-700">
           Nom complet
         </label>
         <input
           type="text"
           value={customerName}
           onChange={(e) => setCustomerName(e.target.value)}
-          className="w-full rounded-xl border px-4 py-3 text-sm outline-none focus:border-orange-500 sm:text-base"
+          className="w-full rounded-xl border px-4 py-3 text-base outline-none focus:border-orange-500"
           placeholder="Entrez votre nom"
         />
       </div>
 
       <div>
-        <label className="mb-1 block font-medium text-gray-700">
+        <label className="mb-2 block text-sm font-medium text-gray-700">
           Téléphone
         </label>
         <input
           type="text"
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
-          className="w-full rounded-xl border px-4 py-3 text-sm outline-none focus:border-orange-500 sm:text-base"
+          className="w-full rounded-xl border px-4 py-3 text-base outline-none focus:border-orange-500"
           placeholder="Entrez votre numéro"
         />
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-2">
+      <div className="grid gap-4">
         <div>
-          <label className="mb-1 block font-medium text-gray-700">
+          <label className="mb-2 block text-sm font-medium text-gray-700">
             Date début
           </label>
           <input
             type="date"
             value={startDate}
             onChange={(e) => setStartDate(e.target.value)}
-            className="w-full rounded-xl border px-4 py-3 text-sm outline-none focus:border-orange-500 sm:text-base"
+            className="w-full rounded-xl border px-4 py-3 text-base outline-none focus:border-orange-500"
           />
         </div>
 
         <div>
-          <label className="mb-1 block font-medium text-gray-700">
+          <label className="mb-2 block text-sm font-medium text-gray-700">
             Date fin
           </label>
           <input
             type="date"
             value={endDate}
             onChange={(e) => setEndDate(e.target.value)}
-            className="w-full rounded-xl border px-4 py-3 text-sm outline-none focus:border-orange-500 sm:text-base"
+            className="w-full rounded-xl border px-4 py-3 text-base outline-none focus:border-orange-500"
           />
         </div>
       </div>
 
       <div className="rounded-xl bg-gray-100 p-4">
-        <p className="text-sm text-gray-700 sm:text-base">
+        <p className="text-sm text-gray-700">
           Nombre de jours : {totalDays}
         </p>
-        <p className="text-base font-bold text-orange-600 sm:text-lg">
+        <p className="text-2xl font-bold text-orange-600">
           Total : {totalPrice.toLocaleString()} FCFA
         </p>
       </div>
 
-      <div className="flex flex-col gap-3 sm:flex-row">
+      <div className="flex flex-col gap-3">
         <button
           type="button"
           onClick={onClose}

@@ -17,7 +17,6 @@ export default function App() {
     <BrowserRouter>
       <div className="min-h-screen bg-gray-100">
         
-        {/* ✅ Navbar seulement si connecté */}
         {user && <Navbar />}
 
         <Routes>
@@ -27,7 +26,6 @@ export default function App() {
             element={!user ? <Login /> : <Navigate to="/" />}
           />
 
-          {/* ✅ Pages protégées */}
           <Route
             path="/"
             element={user ? <Home /> : <Navigate to="/login" />}
@@ -63,8 +61,7 @@ export default function App() {
             element={user ? <Contact /> : <Navigate to="/login" />}
           />
         </Routes>
-
-        {/* ✅ Footer seulement si connecté */}
+        
         {user && <Footer />}
       </div>
     </BrowserRouter>
