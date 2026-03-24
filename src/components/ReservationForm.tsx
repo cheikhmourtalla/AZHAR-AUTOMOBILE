@@ -1,9 +1,5 @@
 import { useState } from "react";
-import type {
-  Car,
-  PaymentMethod,
-  Reservation,
-} from "../types/car";
+import type { Car, Reservation } from "../types/car";
 
 type ReservationFormProps = {
   car: Car;
