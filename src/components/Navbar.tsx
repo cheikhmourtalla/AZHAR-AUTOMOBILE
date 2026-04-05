@@ -3,13 +3,8 @@ import { useState } from "react";
 import logo from "../assets/logo.jpg";
 
 export default function Navbar() {
-  const user = JSON.parse(localStorage.getItem("user") || "null");
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleLogout = () => {
-    localStorage.removeItem("user");
-    window.location.href = "/login";
-  };
 
   const navLinkClass = ({ isActive }: { isActive: boolean }) =>
     `font-medium transition ${
@@ -63,18 +58,7 @@ export default function Navbar() {
               Contact
             </NavLink>
 
-            {user && (
-              <span className="max-w-[180px] truncate text-sm text-gray-500">
-                {user.email}
-              </span>
-            )}
-
-            <button
-              onClick={handleLogout}
-              className="rounded-xl bg-red-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-red-600"
-            >
-              Déconnexion
-            </button>
+      
           </div>
 
           {/* Mobile button */}
@@ -124,18 +108,8 @@ export default function Navbar() {
                 Contact
               </NavLink>
 
-              {user && (
-                <div className="mt-2 rounded-xl bg-gray-50 px-4 py-3 text-sm text-gray-600">
-                  Connecté : {user.email}
-                </div>
-              )}
+          
 
-              <button
-                onClick={handleLogout}
-                className="mt-2 rounded-xl bg-red-500 px-4 py-3 text-sm font-semibold text-white transition hover:bg-red-600"
-              >
-                Déconnexion
-              </button>
             </div>
           </div>
         )}
