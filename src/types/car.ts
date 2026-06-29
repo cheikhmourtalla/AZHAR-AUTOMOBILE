@@ -1,6 +1,6 @@
 export type CarPurpose = "location" | "vente";
-export type PaymentMethod = "wave" | "orange-money";
-export type PaymentStatus = "pending" | "paid";
+
+export type ReservationStatus = "en_attente" | "confirmee" | "annulee";
 
 export type Car = {
   id: number;
@@ -22,11 +22,12 @@ export type Reservation = {
   id: number;
   carId: number;
   carName: string;
+  carImage?: string;
   customerName: string;
   phone: string;
   startDate: string;
   endDate: string;
   totalPrice: number;
-  paymentMethod: PaymentMethod;
-  paymentStatus: PaymentStatus;
+  status: ReservationStatus;
+  createdAt: string;
 };
